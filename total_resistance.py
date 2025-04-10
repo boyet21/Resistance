@@ -34,9 +34,17 @@ class TotalResistanceCalculator(QWidget):
 
         self.setLayout(grid)
     def calculate(self):
-        # Get the resistances from the input boxes
-        r1 = float(self.r1_input.text())
-        r2 = float(self.r2_input.text())
+        try:
+            # Get the resistances from the input boxes
+            r1 = float(self.r1_input.text())
+            r2 = float(self.r2_input.text())
+        except ValueError:
+            self.result_label.setText("Please enter valid numeric values for R1 and R2.")
+            return
+
+        # Check for division by zero in parallel resistance
+        if r1 + r2 == 0:
+            self.result_label.setText("R1 and R2 cannot both be zero for parallel resistance.")
 
         # Calculate the total resistances in series
         total_resistance1 = r1 + r2
