@@ -6,6 +6,7 @@ class TotalResistanceCalculator(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Total Resistance Calculator")
+        self.setMinimumSize(50,50)
         grid = QGridLayout()
 
         #Add Widgets
