@@ -6,7 +6,7 @@ class TotalResistanceCalculator(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Total Resistance Calculator")
-        self.setMinimumSize(50,50)
+        self.setMinimumSize(100,50)
         grid = QGridLayout()
 
         #Add Widgets
@@ -29,11 +29,12 @@ class TotalResistanceCalculator(QWidget):
         grid.addWidget(self.r1_input,0,1)
         grid.addWidget(r2label,1,0)
         grid.addWidget(self.r2_input,1,1)
-        grid.addWidget(self.unit_combo,1,2)
+        grid.addWidget(self.unit_combo,2,1)
         grid.addWidget(calculate_button,2,0)
-        grid.addWidget(self.result_label,2,1,1,2)
+        grid.addWidget(self.result_label,3,1,1,2)
 
         self.setLayout(grid)
+
     def calculate(self):
         try:
             # Get the resistances from the input boxes
