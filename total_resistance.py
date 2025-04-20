@@ -1,17 +1,23 @@
 from PyQt6.QtWidgets import QApplication, QGridLayout, QWidget, QLabel, \
     QLineEdit, QPushButton, QComboBox
+from PyQt6.QtGui import QIcon
 import sys
+
+
 
 class TotalResistanceCalculator(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Total Resistance Calculator")
-        self.setMinimumSize(100,50)
+        self.setGeometry(150,50,300,20)
+        self.setWindowIcon(QIcon('icons/Lion.png'))
+        self.setStyleSheet('background-color: #940;')
         grid = QGridLayout()
 
         #Add Widgets
         r1label = QLabel("R1")
         self.r1_input = QLineEdit()
+
 
         r2label = QLabel("R2")
         self.r2_input =QLineEdit()
@@ -31,7 +37,7 @@ class TotalResistanceCalculator(QWidget):
         grid.addWidget(self.r2_input,1,1)
         grid.addWidget(self.unit_combo,2,1)
         grid.addWidget(calculate_button,2,0)
-        grid.addWidget(self.result_label,3,1,1,2)
+        grid.addWidget(self.result_label,3,0,1,2)
 
         self.setLayout(grid)
 
