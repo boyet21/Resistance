@@ -11,16 +11,20 @@ class TotalResistanceCalculator(QWidget):
         self.setWindowTitle("Total Resistance Calculator")
         self.setGeometry(150,50,300,20)
         self.setWindowIcon(QIcon('icons/Lion.png'))
-        self.setStyleSheet('background-color: #940;')
+        self.setStyleSheet('background-color: #159')
+
         grid = QGridLayout()
 
-        #Add Widgets
+        #Add widgets
         r1label = QLabel("R1")
         self.r1_input = QLineEdit()
-
+        self.r1_input.setStyleSheet("QLineEdit{background-color:lightblue;"
+                                    "color:darkblue;}")
 
         r2label = QLabel("R2")
         self.r2_input =QLineEdit()
+        self.r2_input.setStyleSheet("QLineEdit{background-color:lightblue;"
+                                    "color:darkblue;}")
 
         self.unit_combo = QComboBox()
         self.unit_combo.addItems(["Series","Parallel"])
