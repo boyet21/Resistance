@@ -12,17 +12,23 @@ class TotalResistanceCalculator(QWidget):
         self.setWindowTitle("Resistance Calculator")
         self.setMinimumSize(250,150)
         self.setWindowIcon(QIcon('icons/Lion.png'))
-        self.setStyleSheet('background-color: #159')
+        self.setStyleSheet('background-color:darkorange;')
 
         grid = QGridLayout()
 
         #Add widgets
         r1label = QLabel("R1 (in ohms)")
+        font1 = r1label.font()
+        font1.setPointSize(12)
+        r1label.setFont(font1)
         self.r1_input = QLineEdit()
         self.r1_input.setStyleSheet("QLineEdit{background-color:lightblue;"
                                     "color:darkgreen;font-size:16px;}")
 
         r2label = QLabel("R2 (in ohms)")
+        font2 = r2label.font()
+        font2.setPointSize(12)
+        r2label.setFont(font2)
         self.r2_input =QLineEdit()
         self.r2_input.setStyleSheet("QLineEdit{background-color:lightblue;"
                                     "color:darkblue;font-size:16px;}")
@@ -31,6 +37,7 @@ class TotalResistanceCalculator(QWidget):
         self.unit_combo.addItems(["Series","Parallel"])
 
         calculate_button = QPushButton("Calculate")
+        calculate_button.setStyleSheet("QPushButton{background-color:green;}")
         calculate_button.clicked.connect(self.calculate)
 
         self.result_label = QLabel()
