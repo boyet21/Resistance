@@ -12,7 +12,7 @@ class TotalResistanceCalculator(QWidget):
         self.setWindowTitle("Resistance Calculator")
         self.setMinimumSize(250,150)
         self.setWindowIcon(QIcon('icons/Lion.png'))
-        self.setStyleSheet('background-color:orangered;')
+        self.setStyleSheet('background-color: navy;')
 
         grid = QGridLayout()
 
@@ -22,7 +22,7 @@ class TotalResistanceCalculator(QWidget):
         font1.setPointSize(12)
         r1label.setFont(font1)
         self.r1_input = QLineEdit()
-        self.r1_input.setStyleSheet("QLineEdit{background-color:lightblue;"
+        self.r1_input.setStyleSheet("QLineEdit{background-color:beige;"
                                     "color:darkgreen;font-size:16px;}")
 
         r2label = QLabel("R2 (in ohms)")
@@ -30,7 +30,7 @@ class TotalResistanceCalculator(QWidget):
         font2.setPointSize(12)
         r2label.setFont(font2)
         self.r2_input =QLineEdit()
-        self.r2_input.setStyleSheet("QLineEdit{background-color:lightblue;"
+        self.r2_input.setStyleSheet("QLineEdit{background-color:beige;"
                                     "color:darkblue;font-size:16px;}")
 
         self.unit_combo = QComboBox()
@@ -77,7 +77,7 @@ class TotalResistanceCalculator(QWidget):
             total_resistance = round(total_resistance1, 2)
             unit = "ohms"
 
-        if self.unit_combo.currentText() == 'Parallel':
+        elif self.unit_combo.currentText() == 'Parallel':
             total_resistance = round(total_resistance2, 2)
             unit = "ohms"
 
