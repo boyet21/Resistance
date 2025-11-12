@@ -12,7 +12,7 @@ class TotalResistanceCalculator(QWidget):
         self.setWindowTitle("Resistance Calculator")
         self.setMinimumSize(250,150)
         self.setWindowIcon(QIcon('icons/Lion.png'))
-        self.setStyleSheet('background-color:darkorange;')
+        self.setStyleSheet('background-color:orangered;')
 
         grid = QGridLayout()
 
